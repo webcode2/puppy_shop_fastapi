@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, DateTime, Integer, String ,BOOLEAN
+from sqlalchemy import Column, DateTime, Integer, String ,BOOLEAN,LargeBinary
 from sqlalchemy.orm import declarative_mixin,mapped_column,Mapped
 from app.db.main import Base
 
@@ -20,4 +20,4 @@ class UserBasic:
     last_name: Mapped[str] = Column(String(100), nullable=False)
     email: Mapped[str] = Column(String(255),  nullable=False)
     phone: Mapped[str] = Column(String(12),  nullable=False)
-    password: Mapped[str] = Column(String(128), nullable=False)
+    password: Mapped[str] = Column(LargeBinary ,nullable=False)

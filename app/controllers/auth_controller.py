@@ -35,7 +35,8 @@ def verify_password(plain_password, hashed_password) -> bool:
 
 
 def get_password_hash(password):
-    return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+    password_=bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+    return password_
 
 
 def create_access_token(data: dict, expires_delta: timedelta = None,reset_password:bool=False) -> str:
